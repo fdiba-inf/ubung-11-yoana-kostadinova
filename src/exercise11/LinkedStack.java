@@ -4,17 +4,33 @@ public class LinkedStack {
     private Node topNode;
 
     public boolean isEmpty() {
-        // Check if stack has no elements
-        return false;
+        return (topNode) == null;
+        
     }
 
     public void push(String data) {
         // Push element to stack
+        Node node = new Node(data);
+        if (isEmpty()) {
+          topNode = new Node(data);
+        }
+        else {
+          Node node = new Node(data);
+          node.setNextNode(topNode);
+          topNode = newNode;
+        }
     }
 
     public String pop() {
         // Pop element from stack
-        return null;
+        if (isEmpty()) {
+          return null;
+        }
+        else {
+          String data = topNode.getData();
+          topNode = topNode.getNextNode;
+        return data;
+        }
     }
 
     @Override
